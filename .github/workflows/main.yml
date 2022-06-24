@@ -1,4 +1,5 @@
-# This is a basic workflow to help you get started with Actions
+# This is a basic workflow to help you get started with Actions 
+# every step must define a `uses` or `run` key
 
 name: CI
 
@@ -45,11 +46,12 @@ jobs:
           flutter-version: '2.10.4'
       
       - name: Compilação do Flutter
-      - run: flutter pub get
-      - run: flutter test
-      - run: flutter build apk
-      - run: flutter build appbundle
-      - run: ls
+        run: | 
+          flutter pub get
+          flutter test
+          flutter build apk
+          flutter build appbundle
+          ls
       
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.0
